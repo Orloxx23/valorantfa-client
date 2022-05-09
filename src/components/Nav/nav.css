@@ -1,0 +1,36 @@
+.nav-container {
+  position: sticky;
+  width: 100%;
+  height: 10vh;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.nav-logo{
+  margin: 20px;
+}
+
+.nav-items {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-items i {
+  cursor: pointer;
+}
+
+.dnone{
+  display: none;
+}
+
+.nav-logo a{
+  color: white;
+  text-decoration: none;
+  font-family: tungsten;
+  font-size: 2rem;
+}
+

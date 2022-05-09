@@ -1,0 +1,22 @@
+.footer-container {
+  width: 100%;
+  height: 10vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.footer-logo{
+  margin: 20px;
+}
+
+.footer-logo a{
+  color: white;
+  text-decoration: none;
+  font-family: tungsten;
+  font-size: 2rem;
+}
+
+

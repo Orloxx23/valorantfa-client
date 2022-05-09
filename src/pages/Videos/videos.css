@@ -1,0 +1,102 @@
+.catergories {
+  width: 100%;
+  height: 8vh;
+  background: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 10px 0;
+}
+
+.category-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d13639;
+  color: #fff;
+  padding: 10px 30px 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.category-button p {
+  font-family: tungsten;
+  font-size: 25px;
+}
+
+.catergories hr {
+  height: 40px;
+}
+
+.videos-section {
+  width: 100%;
+  height: auto;
+  min-height: 94vh;
+  
+
+  display: grid;
+  grid-template-rows: auto/*repeat(4, 1fr)*/;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  padding: 50px 100px;
+  background: #ece8e1;
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
+  background: #222222;
+}
+
+
+
+/* From uiverse.io by @alexroumi */
+.catergories button {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #ffffff;
+  z-index: 1;
+  background: #d13639;
+  position: relative;
+  font-weight: 1000;
+  font-size: 24px;
+  font-family: tungsten;
+  text-transform: uppercase;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.catergories button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #ff4655;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+.catergories button:hover {
+  color: #e8e8e8;
+}
+
+.catergories button:hover::before {
+  width: 100%;
+}
