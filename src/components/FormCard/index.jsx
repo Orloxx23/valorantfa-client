@@ -5,8 +5,6 @@ import "./formcard.css";
 
 export default function FormCard() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
-  const [type, setType] = useState("sugerencia");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
 
@@ -17,38 +15,18 @@ export default function FormCard() {
   const handleEmail = (event) => {
     const newEmail = event.target.value;
     setEmail(newEmail);
-    console.log(email);
   };
 
   const handleDescription = (event) => {
     const desc = event.target.value;
     setDescription(desc);
-    console.log(description);
-  };
-
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
-    if (isChecked) {
-      setType("bug");
-    } else {
-      setType("sugerencia");
-    }
-    console.log(type);
   };
 
   const enviar = async (e) => {
-    e.preventDefault();
     if (email.length !== "" && description.length !== "") {
       await axios.post("https://valorantfa-api.herokuapp.com/api/sugerencias", {
         email: email,
         description: description,
-        type: type,
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers":
-            "POST, GET, PUT, DELETE, OPTIONS, HEAD, Authorization, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin",
-          "Content-Type": "application/json",
-        },
       });
     } else {
       console.log("NO");
@@ -88,14 +66,6 @@ export default function FormCard() {
               onChange={(text) => handleDescription(text)}
               required
             />
-            <div className="formcard-type">
-              <p className="mr">Sugerencia</p>
-              <label className="switch">
-                <input type="checkbox" onChange={() => handleOnChange()} />
-                <span className="slider"></span>
-              </label>
-              <p className="ml">Bug</p>
-            </div>
             <Button text="enviar" />
           </form>
         </div>
