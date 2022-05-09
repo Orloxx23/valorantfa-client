@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "../Button";
 import axios from "axios";
 import "./formcard.css";
@@ -41,8 +41,14 @@ export default function FormCard() {
     if (email.length !== "" && description.length !== "") {
       await axios.post("https://valorantfa-api.herokuapp.com/api/sugerencias", {
         email: email,
-        sugerencia: description,
+        description: description,
         type: type,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "POST, GET, PUT, DELETE, OPTIONS, HEAD, Authorization, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin",
+          "Content-Type": "application/json",
+        },
       });
     } else {
       console.log("NO");
