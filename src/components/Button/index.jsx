@@ -10,8 +10,8 @@ export default function Button(props) {
 
   return (
     <>
-      <div class="button-borders">
-        <button class="primary-button" onClick={() => click()}>{props.text}</button>
+      <div className="button-borders">
+        <button className="primary-button" onClick={() => click()}>{props.text}</button>
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./videos.css";
 import "./videomodal.css";
-import { VideoCard, Pagination } from "../../components";
+import { VideoCard, Pagination, FormCard } from "../../components";
 
 export default function Videos() {
   const [videos, setVideos] = useState([]);
@@ -67,7 +67,7 @@ export default function Videos() {
         {modal ? (
           <section className="modal__bg">
             <div className="modal__align">
-              <div className="modal__content" modal={modal}>
+              <div className="modal__content">
                 <i
                   className="fa-solid fa-xmark modal__close"
                   arial-label="Close modal"
@@ -91,7 +91,7 @@ export default function Videos() {
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               </div>
@@ -136,6 +136,7 @@ export default function Videos() {
           currentPage={currentPage}
         />
       </div>
+      <FormCard/>
     </>
   );
 }
