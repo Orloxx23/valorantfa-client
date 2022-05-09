@@ -7,6 +7,7 @@ export default function FormCard() {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const open = () => {
     setIsOpen(!isOpen);
@@ -23,14 +24,18 @@ export default function FormCard() {
   };
 
   const enviar = async (e) => {
+    e.preventDefault();
+    setLoading(true);
     if (email.length !== "" && description.length !== "") {
       await axios.post("https://valorantfa-api.herokuapp.com/api/sugerencias", {
         email: email,
         description: description,
       });
-    } else {
-      console.log("NO");
     }
+    setLoading(false);
+    setEmail("");
+    setDescription("");
+    open();
   };
 
   return (
@@ -56,6 +61,7 @@ export default function FormCard() {
               placeholder="Email"
               type="email"
               className="input"
+              value={email}
               onChange={(text) => handleEmail(text)}
               required
             />
@@ -63,6 +69,7 @@ export default function FormCard() {
               placeholder="Descripción"
               type="text"
               className="input"
+              value={description}
               onChange={(text) => handleDescription(text)}
               required
             />
