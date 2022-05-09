@@ -6,5 +6,6 @@ import FormCard from './FormCard';
 import VideoCard from './VideoCard';
 import Pagination from './Pagination';
 import Coffee from './Coffee';
+import Loading from './Loading';
 
-export { Nav, Footer, Button, Card, VideoCard, Pagination, FormCard, Coffee };
+export { Nav, Footer, Button, Card, VideoCard, Pagination, FormCard, Coffee, Loading };

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./videos.css";
 import "./videomodal.css";
-import { VideoCard, Pagination, FormCard } from "../../components";
+import { VideoCard, Pagination, FormCard, Loading } from "../../components";
 
 export default function Videos() {
   const [videos, setVideos] = useState([]);
@@ -63,7 +63,7 @@ export default function Videos() {
 
   return (
     <>
-    <>
+      <>
         {modal ? (
           <section className="modal__bg">
             <div className="modal__align">
@@ -82,7 +82,6 @@ export default function Videos() {
                   ) : null}
                   <iframe
                     className="modal__video-style"
-                    
                     onLoad={spinner}
                     loading="lazy"
                     width="1135"
@@ -98,45 +97,51 @@ export default function Videos() {
             </div>
           </section>
         ) : null}
-    </>
+      </>
       {/* <div className="catergories">
         <button> guias</button>
         <button> consejos</button>
       </div> */}
-      <div className="videos-section">
-        {currentVideos.map((video, index) => {
-          const item = video.snippet;
-          //console.log('item', item);
-          return (
-            <div
-              key={index}
-              onClick={() => {
-                setVideoId(item.resourceId.videoId);
-                openModal();
-              }}
-            >
-              <VideoCard
-                title={item.title}
-                autor={item.videoOwnerChannelTitle}
-                img={
-                  item.thumbnails.maxres === undefined
-                    ? item.thumbnails.medium.url
-                    : item.thumbnails.maxres.url
-                }
-              />
-            </div>
-          );
-        })}
-      </div>
-      <div className="pagination">
-        <Pagination
-          videosPerPage={videoPerPage}
-          totalVideos={videos.length}
-          paginate={paginate}
-          currentPage={currentPage}
-        />
-      </div>
-      <FormCard/>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <div className="videos-section">
+            {currentVideos.map((video, index) => {
+              const item = video.snippet;
+              //console.log('item', item);
+              return (
+                <div
+                  key={index}
+                  onClick={() => {
+                    setVideoId(item.resourceId.videoId);
+                    openModal();
+                  }}
+                >
+                  <VideoCard
+                    title={item.title}
+                    autor={item.videoOwnerChannelTitle}
+                    img={
+                      item.thumbnails.maxres === undefined
+                        ? item.thumbnails.medium.url
+                        : item.thumbnails.maxres.url
+                    }
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="pagination">
+            <Pagination
+              videosPerPage={videoPerPage}
+              totalVideos={videos.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
+          </div>
+        </>
+      )}
+      <FormCard />
     </>
   );
 }
