@@ -39,7 +39,7 @@ export default function FormCard() {
   const enviar = async (e) => {
     e.preventDefault();
     if (email.length !== "" && description.length !== "") {
-      await axios.post("http://localhost:8800/api/sugerencias", {
+      await axios.post("https://valorantfa-api.herokuapp.com/api/sugerencias", {
         email: email,
         sugerencia: description,
         type: type,
