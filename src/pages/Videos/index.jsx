@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./videos.css";
 import "./videomodal.css";
-import { VideoCard, Pagination, FormCard, Loading } from "../../components";
+import { VideoCard, Pagination, FormCard, Loading, Nav, Footer } from "../../components";
 
 export default function Videos() {
   const [videos, setVideos] = useState([]);
@@ -63,6 +63,7 @@ export default function Videos() {
 
   return (
     <>
+    <Nav/>
       <>
         {modal ? (
           <section className="modal__bg">
@@ -142,6 +143,7 @@ export default function Videos() {
         </>
       )}
       <FormCard />
+      <Footer/>
     </>
   );
 }

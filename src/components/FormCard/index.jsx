@@ -121,7 +121,7 @@ export default function FormCard() {
               onChange={(text) => handleDescription(text)}
               required
             />
-            <Button text="enviar" />
+            <Button text={loading ? "..." : "enviar"} />
           </form>
         </div>
       </div>

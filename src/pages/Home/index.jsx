@@ -2,7 +2,7 @@ import React from "react";
 import "./home.css";
 import "../../assets/css/styles.css";
 import { Brimstone, Kayo, Viper } from "../../assets/img";
-import { Button, Card } from "../../components";
+import { Button, Card, Footer, Nav } from "../../components";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
@@ -12,6 +12,7 @@ export default function Home() {
   };
   return (
     <>
+    <Nav/>
       <div className="coverpage">
         <div className="coverpage-left">
           <div className="left-content">
@@ -28,6 +29,7 @@ export default function Home() {
         <Card text="guias" personaje={Viper}/>
         <Card text="consejos" personaje={Kayo}/>
       </div>
+      <Footer/>
     </>
   );
 }
