@@ -21,7 +21,7 @@ export default function Login() {
   const login = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:8800/api/auth/login", {
+      .post("https://valorantfa-api.herokuapp.com/api/auth/login", {
         usuario: usuario,
         contraseña: contraseña,
       })
