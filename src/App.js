@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Home, Login, Videos } from "./pages";
+import { Admin, Home, Login, Videos } from "./pages";
 function App() {
   const location = useLocation();
   return (
@@ -9,6 +9,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="acceso" element={<Login />} />
+        <Route path="admin" element={<Admin />} />
       </Routes>
 
     </div>
