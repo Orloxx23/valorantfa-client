@@ -4,7 +4,7 @@ Compilation of videos to improve in valorant.
 
 ## Demo
 
-https://valorantfa.herokuapp.com
+https://valorantfa-client.vercel.app/videos
 
 ## Authors
 
