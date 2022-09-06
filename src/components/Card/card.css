@@ -2,7 +2,7 @@
   width: 49%;
   height: 20vh;
   overflow: hidden;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: .3s;
 }
 
