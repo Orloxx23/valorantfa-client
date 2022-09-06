@@ -55,7 +55,7 @@ export default function FormCard() {
     setLoading(true);
     if (email.length !== "" && description.length !== "") {
       await axios
-        .post("https://valorantfa-api.herokuapp.com/api/sugerencias", {
+        .post("https://valorantfa-api.vercel.app/api/sugerencias", {
           email: email,
           description: description,
         })
