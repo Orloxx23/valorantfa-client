@@ -142,7 +142,7 @@ export default function Videos() {
           </div>
         </>
       )}
-      <FormCard />
+      {/* <FormCard /> */}
       <Footer/>
     </>
   );
