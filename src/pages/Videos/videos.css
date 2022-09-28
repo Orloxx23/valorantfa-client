@@ -57,7 +57,6 @@
 }
 
 
-
 /* From uiverse.io by @alexroumi */
 .catergories button {
   padding: 15px 25px;
@@ -99,4 +98,24 @@
 
 .catergories button:hover::before {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .videos-section {
+    width: 100%;
+    height: auto;
+    min-height: 94vh;
+    
+  
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  
+    justify-content: flex-start;
+    align-content: flex-start;
+  
+    padding: 20px;
+    background: #ece8e1;
+  }
 }

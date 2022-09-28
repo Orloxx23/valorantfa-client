@@ -107,3 +107,17 @@ body {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  .card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0em;
+    padding: 0.3rem 0.5rem;
+    /* border-radius: calc(var(--curve) * 1px) 0 0 0; */
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: 0.2s ease-in-out;
+  }
+}
