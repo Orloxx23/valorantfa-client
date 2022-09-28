@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./videos.css";
 import "./videomodal.css";
-import { VideoCard, Pagination, FormCard, Loading, Nav, Footer } from "../../components";
+import { VideoCard, Pagination, Loading, Nav, Footer } from "../../components";
 
 export default function Videos() {
   const [videos, setVideos] = useState([]);
@@ -35,16 +35,6 @@ export default function Videos() {
   };
 
   useEffect(() => {
-    /*const getVideos = async () => {
-      setLoading(true);
-      const res = await axios.get(
-        "https://valorantfa-api.herokuapp.com/api/videos"
-      );
-      setVideos(res.data);
-      setLoading(false);
-    };
-
-    getVideos();*/
     getPlaylist();
   }, []);
 
@@ -110,7 +100,6 @@ export default function Videos() {
           <div className="videos-section">
             {currentVideos.map((video, index) => {
               const item = video.snippet;
-              //console.log('item', item);
               return (
                 <div
                   key={index}
